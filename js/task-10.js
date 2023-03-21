@@ -14,9 +14,9 @@ const refs = {
 const totalArray = [];
 
 refs.inputEl.addEventListener("input", enterInput);
-
+console.log();
 function enterInput(event) {
-  let amount = event.currentTarget.value;
+  let amount = event.target.value;
   refs.createBtn.addEventListener("click", () => {
     createBoxes(amount);
     appElementHtml(amount);
@@ -26,9 +26,7 @@ function enterInput(event) {
     refs.boxesEl.innerHTML = "";
     totalArray.splice(0, amount);
     amount = 0;
-    // refs.inputEl.data = null;
-    // event.currentTarget.reset();
-    // event.currentTarget.value = "";
+    event.target.value = "";
   });
 }
 
